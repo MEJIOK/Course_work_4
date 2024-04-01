@@ -76,10 +76,10 @@ class Job:
 
             jobs_list = []
             for value in data:
-                if value['salary'] is None:
-                    currency = ''
-                else:
+                if isinstance(value['salary'], dict):
                     currency = value['salary']['currency']
+                else:
+                    currency = ''
 
                 jobs_list.append(cls(name=value['name'],
                                      area=value['area']['name'],
