@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "job_search"
+version = "0.1.0"
+description = "A tool for searching job vacancies on hh.ru"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+requests = "^2.31.0"
+colorama = "^0.4.6"
+
+[tool.poetry.dev-dependencies]
+pytest = "^8.1.1"
+
+[tool.poetry.scripts]
+job_search = "main:user_interaction"
+
+[tool.poetry.extras]
+dev = ["pytest"]
