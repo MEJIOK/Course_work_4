@@ -23,7 +23,7 @@ class Job:
         Check attribute values for None
         """
         if value is None:
-            return f'Requirements are not specified'
+            return f'Требования не указаны'
         else:
             return f'{value}'
 
@@ -92,31 +92,31 @@ class Job:
                                      url=value['alternate_url']))
 
             if len(jobs_list) == 0 or jobs_list is None:
-                return f"Invalid data format"
+                return f'Неверный формат данных'
 
             return jobs_list
         else:
-            return f"Invalid data format"
+            return f'Неверный формат данных'
 
     def __str__(self):
         """
         String representation of class attributes for the user
         """
         if self.salary == 0:
-            self.salary = f"Salary not specified"
-        return (f'Job Title: {Fore.CYAN}{self.name}{Fore.RESET}\n'
-                f'City: {Fore.CYAN}{self.area}{Fore.RESET}\n'
-                f'Requirements: {Fore.CYAN}{self.requirement}{Fore.RESET}\n'
-                f'Responsibilities: {Fore.CYAN}{self.responsibility}{Fore.RESET}\n'
-                f'Salary: {Fore.CYAN}{self.salary} {self.currency}{Fore.RESET}\n'
-                f'Experience required: {Fore.CYAN}{self.experience}{Fore.RESET}\n'
-                f'Employer: {Fore.CYAN}{self.employer}{Fore.RESET}\n'
-                f'URL: {self._url}\n')
+            self.salary = f'Зарплата не указана'
+        return (f'Должность: {Fore.CYAN}{self.name}{Fore.RESET}\n'
+                f'Город: {Fore.CYAN}{self.area}{Fore.RESET}\n'
+                f'Требования: {Fore.CYAN}{self.requirement}{Fore.RESET}\n'
+                f'Обязанности: {Fore.CYAN}{self.responsibility}{Fore.RESET}\n'
+                f'Зарплата: {Fore.CYAN}{self.salary} {self.currency}{Fore.RESET}\n'
+                f'Требуемый опыт: {Fore.CYAN}{self.experience}{Fore.RESET}\n'
+                f'Работодатель: {Fore.CYAN}{self.employer}{Fore.RESET}\n'
+                f'URL-адрес: {self._url}\n')
 
     def __repr__(self):
         """
         Display information about the class for the developer
         """
         return (
-            f'Class Name: {self.__class__.__name__}. Class Attributes: ({self.name}, {self.area}, {self.requirement}, '
+            f'Имя Класса: {self.__class__.__name__}. Атрибуты Класса: ({self.name}, {self.area}, {self.requirement}, '
             f'{self.responsibility}, {self.salary}, {self.experience}, {self._url})\n')
